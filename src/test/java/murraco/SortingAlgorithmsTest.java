@@ -101,6 +101,13 @@ public class SortingAlgorithmsTest {
   }
 
   @Test
+  public void testBubbleSortBoundaryArraySize() {
+      final Integer[] data = {Integer.MAX_VALUE, Integer.MIN_VALUE};
+      BubbleSort.bubbleSort(data);
+      assertEquals("[" + Integer.MIN_VALUE + ", " + Integer.MAX_VALUE + "]", Arrays.toString(data));
+  }
+
+  @Test
   public void testInsertionSort() {
     final Integer[] data = {4, 3, 0, 11, 7, 5, 15, 12, 99, 1};
     InsertionSort.insertionSort(data);
