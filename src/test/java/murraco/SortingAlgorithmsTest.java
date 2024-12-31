@@ -66,6 +66,41 @@ public class SortingAlgorithmsTest {
   }
 
   @Test
+  public void testBubbleSortEmptyArray() {
+    final Integer[] data = {};
+    BubbleSort.bubbleSort(data);
+    assertEquals("[]", Arrays.toString(data));
+  }
+  
+  @Test
+  public void testBubbleSortIdenticalElements() {
+    final Integer[] data = {5, 5, 5, 5, 5};
+    BubbleSort.bubbleSort(data);
+    assertEquals("[5, 5, 5, 5, 5]", Arrays.toString(data));
+  }
+
+  @Test
+  public void testBubbleSortNegativeNumbers() {
+    final Integer[] data = {-3, -1, -7, -4, 0, -2};
+    BubbleSort.bubbleSort(data);
+    assertEquals("[-7, -4, -3, -2, -1, 0]", Arrays.toString(data));
+  }
+
+  @Test
+  public void testBubbleSortMixedNumbers() {
+    final Integer[] data = {-3, 4, -1, 7, 0, -5, 2};
+    BubbleSort.bubbleSort(data);
+    assertEquals("[-5, -3, -1, 0, 2, 4, 7]", Arrays.toString(data));
+  }
+
+  @Test
+  public void testBubbleSortFloatingPointNumbers() {
+    final Double[] data = {3.1, 2.4, 5.5, 1.1, 3.0};
+    BubbleSort.bubbleSort(data);
+    assertEquals("[1.1, 2.4, 3.0, 3.1, 5.5]", Arrays.toString(data));
+  }
+
+  @Test
   public void testInsertionSort() {
     final Integer[] data = {4, 3, 0, 11, 7, 5, 15, 12, 99, 1};
     InsertionSort.insertionSort(data);
@@ -112,6 +147,41 @@ public class SortingAlgorithmsTest {
     InsertionSort.insertionSort(largeArray);
 
     assertArrayEquals(expectedArray, largeArray);
+  }
+
+  @Test
+  public void testInsertionSortEmptyArray() {
+    final Integer[] data = {};
+    InsertionSort.insertionSort(data);
+    assertEquals("[]", Arrays.toString(data));
+  }
+  
+  @Test
+  public void tesInsertionSortIdenticalElements() {
+    final Integer[] data = {5, 5, 5, 5, 5};
+    InsertionSort.insertionSort(data);
+    assertEquals("[5, 5, 5, 5, 5]", Arrays.toString(data));
+  }
+
+  @Test
+  public void testInsertionSortNegativeNumbers() {
+    final Integer[] data = {-3, -1, -7, -4, 0, -2};
+    InsertionSort.insertionSort(data);
+    assertEquals("[-7, -4, -3, -2, -1, 0]", Arrays.toString(data));
+  }
+
+  @Test
+  public void testInsertionSortMixedNumbers() {
+    final Integer[] data = {-3, 4, -1, 7, 0, -5, 2};
+    InsertionSort.insertionSort(data);
+    assertEquals("[-5, -3, -1, 0, 2, 4, 7]", Arrays.toString(data));
+  }
+
+  @Test
+  public void testInsertionSortFloatingPointNumbers() {
+    final Double[] data = {3.1, 2.4, 5.5, 1.1, 3.0};
+    InsertionSort.insertionSort(data);
+    assertEquals("[1.1, 2.4, 3.0, 3.1, 5.5]", Arrays.toString(data));
   }
 
   @Test
@@ -164,6 +234,41 @@ public class SortingAlgorithmsTest {
   }
 
   @Test
+  public void testSelectionSortEmptyArray() {
+    final Integer[] data = {};
+    SelectionSort.selectionSort(data);
+    assertEquals("[]", Arrays.toString(data));
+  }
+  
+  @Test
+  public void tesSelectionSortIdenticalElements() {
+    final Integer[] data = {5, 5, 5, 5, 5};
+    SelectionSort.selectionSort(data);
+    assertEquals("[5, 5, 5, 5, 5]", Arrays.toString(data));
+  }
+
+  @Test
+  public void testSelectionSortNegativeNumbers() {
+    final Integer[] data = {-3, -1, -7, -4, 0, -2};
+    SelectionSort.selectionSort(data);
+    assertEquals("[-7, -4, -3, -2, -1, 0]", Arrays.toString(data));
+  }
+
+  @Test
+  public void testSelectionSortMixedNumbers() {
+    final Integer[] data = {-3, 4, -1, 7, 0, -5, 2};
+    SelectionSort.selectionSort(data);
+    assertEquals("[-5, -3, -1, 0, 2, 4, 7]", Arrays.toString(data));
+  }
+
+  @Test
+  public void testSelectionSortFloatingPointNumbers() {
+    final Double[] data = {3.1, 2.4, 5.5, 1.1, 3.0};
+    SelectionSort.selectionSort(data);
+    assertEquals("[1.1, 2.4, 3.0, 3.1, 5.5]", Arrays.toString(data));
+  }
+
+  @Test
   public void testMergeSort() {
     final Integer[] data = {4, 3, 0, 11, 7, 5, 15, 12, 99, 1};
     MergeSort.mergeSort(data);
@@ -210,6 +315,34 @@ public class SortingAlgorithmsTest {
     MergeSort.mergeSort(largeArray);
 
     assertArrayEquals(expectedArray, largeArray);
+  }
+
+  @Test
+  public void testMergeSortEmptyArray() {
+    final Integer[] data = {};
+    MergeSort.mergeSort(data);
+    assertEquals("[]", Arrays.toString(data));
+  }
+  
+  @Test
+  public void testMergeSortIdenticalElements() {
+    final Integer[] data = {5, 5, 5, 5, 5};
+    MergeSort.mergeSort(data);
+    assertEquals("[5, 5, 5, 5, 5]", Arrays.toString(data));
+  }
+
+  @Test
+  public void testMergeSortNegativeNumbers() {
+    final Integer[] data = {-3, -1, -7, -4, 0, -2};
+    MergeSort.mergeSort(data);
+    assertEquals("[-7, -4, -3, -2, -1, 0]", Arrays.toString(data));
+  }
+
+  @Test
+  public void testMergeSortMixedNumbers() {
+    final Integer[] data = {-3, 4, -1, 7, 0, -5, 2};
+    MergeSort.mergeSort(data);
+    assertEquals("[-5, -3, -1, 0, 2, 4, 7]", Arrays.toString(data));
   }
 
   @Test
@@ -262,6 +395,41 @@ public class SortingAlgorithmsTest {
   }
 
   @Test
+  public void testHeapSortEmptyArray() {
+    final Integer[] data = {};
+    Heapsort.heapSort(data);
+    assertEquals("[]", Arrays.toString(data));
+  }
+  
+  @Test
+  public void testHeapSortIdenticalElements() {
+    final Integer[] data = {5, 5, 5, 5, 5};
+    Heapsort.heapSort(data);
+    assertEquals("[5, 5, 5, 5, 5]", Arrays.toString(data));
+  }
+
+  @Test
+  public void testHeapSortNegativeNumbers() {
+    final Integer[] data = {-3, -1, -7, -4, 0, -2};
+    Heapsort.heapSort(data);
+    assertEquals("[-7, -4, -3, -2, -1, 0]", Arrays.toString(data));
+  }
+
+  @Test
+  public void testHeapSortMixedNumbers() {
+    final Integer[] data = {-3, 4, -1, 7, 0, -5, 2};
+    Heapsort.heapSort(data);
+    assertEquals("[-5, -3, -1, 0, 2, 4, 7]", Arrays.toString(data));
+  }
+
+  @Test
+  public void testHeapSortFloatingPointNumbers() {
+    final Double[] data = {3.1, 2.4, 5.5, 1.1, 3.0};
+    Heapsort.heapSort(data);
+    assertEquals("[1.1, 2.4, 3.0, 3.1, 5.5]", Arrays.toString(data));
+  }
+
+  @Test
   public void testQuicksort() {
     final Integer[] data = {4, 3, 0, 11, 7, 5, 15, 12, 99, 1};
     Quicksort.quickSort(data);
@@ -308,5 +476,40 @@ public class SortingAlgorithmsTest {
     Quicksort.quickSort(largeArray);
 
     assertArrayEquals(expectedArray, largeArray);
+  }
+
+  @Test
+  public void testQuickSortEmptyArray() {
+    final Integer[] data = {};
+    Quicksort.quickSort(data);
+    assertEquals("[]", Arrays.toString(data));
+  }
+  
+  @Test
+  public void testQuickSortIdenticalElements() {
+    final Integer[] data = {5, 5, 5, 5, 5};
+    Quicksort.quickSort(data);
+    assertEquals("[5, 5, 5, 5, 5]", Arrays.toString(data));
+  }
+
+  @Test
+  public void testQuickSortNegativeNumbers() {
+    final Integer[] data = {-3, -1, -7, -4, 0, -2};
+    Quicksort.quickSort(data);
+    assertEquals("[-7, -4, -3, -2, -1, 0]", Arrays.toString(data));
+  }
+
+  @Test
+  public void testQuickSortMixedNumbers() {
+    final Integer[] data = {-3, 4, -1, 7, 0, -5, 2};
+    Quicksort.quickSort(data);
+    assertEquals("[-5, -3, -1, 0, 2, 4, 7]", Arrays.toString(data));
+  }
+
+  @Test
+  public void testQuickSortFloatingPointNumbers() {
+    final Double[] data = {3.1, 2.4, 5.5, 1.1, 3.0};
+    Quicksort.quickSort(data);
+    assertEquals("[1.1, 2.4, 3.0, 3.1, 5.5]", Arrays.toString(data));
   }
 }
