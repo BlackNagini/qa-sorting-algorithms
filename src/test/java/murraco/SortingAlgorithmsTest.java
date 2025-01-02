@@ -64,22 +64,15 @@ public class SortingAlgorithmsTest {
   @Test
   public void testBubbleSortDuplicate() {
     final Integer[] data = {4, 3, 3, 0, 11, 7, 5, 15, 12, 12, 99, 1};
+    Integer[] expected = {0, 1, 3, 3, 4, 5, 7, 11, 12, 12, 15, 99};
     BubbleSort.bubbleSort(data);
-    assertEquals("[0, 1, 3, 3, 4, 5, 7, 11, 12, 12, 15, 99]", Arrays.toString(data));
+    assertEquals(Arrays.toString(expected), Arrays.toString(data));
   }
 
   // Verifies BubbleSort's ability to handle null input, ensuring proper exception handling.
   @Test(expected = IllegalArgumentException.class)
   public void testBubbleSortNullArray() {
     BubbleSort.bubbleSort(null);
-  }
-
-  // Tests BubbleSort with a single-element array to confirm correct handling of minimal input.
-  @Test
-  public void testBubbleSortSingleItem() {
-    final Integer[] data = {4};
-    BubbleSort.bubbleSort(data);
-    assertEquals("[4]", Arrays.toString(data));
   }
 
   // Evaluates InsertionSort's performance on a large array for scalability and efficiency.
@@ -103,40 +96,54 @@ public class SortingAlgorithmsTest {
   @Test
   public void testInsertionSortEmptyArray() {
     final Integer[] data = {};
+    Integer[] expected = {};
     InsertionSort.insertionSort(data);
-    assertEquals("[]", Arrays.toString(data));
+    assertEquals(Arrays.toString(expected), Arrays.toString(data));
   }
   
   // Tests SelectionSort with an array of identical elements to check for stability.
   @Test
   public void tesSelectionSortIdenticalElements() {
     final Integer[] data = {5, 5, 5, 5, 5};
+    Integer[] expected = {5, 5, 5, 5, 5};
     SelectionSort.selectionSort(data);
-    assertEquals("[5, 5, 5, 5, 5]", Arrays.toString(data));
+    assertEquals(Arrays.toString(expected), Arrays.toString(data));
   }
 
   // Verifies SelectionSort's ability to handle arrays with negative numbers, testing equivalence partitioning.
   @Test
   public void testSelectionSortNegativeNumbers() {
     final Integer[] data = {-3, -1, -7, -4, 0, -2};
+    Integer[] expected = {-7, -4, -3, -2, -1, 0};
     SelectionSort.selectionSort(data);
-    assertEquals("[-7, -4, -3, -2, -1, 0]", Arrays.toString(data));
+    assertEquals(Arrays.toString(expected), Arrays.toString(data));
   }
+
+    // Tests HeapSort with a single-element array to confirm correct handling of minimal input.
+    @Test
+    public void testHeapSortSingleItem() {
+      final Integer[] data = {4};
+      Integer[] expected = {4};
+      Heapsort.heapSort(data);
+      assertEquals(Arrays.toString(expected), Arrays.toString(data));
+    }
 
   // Tests Heapsort with floating point numbers to ensure correct sorting behavior.
   @Test
   public void testHeapSortFloatingPointNumbers() {
-    final Double[] data = {3.1, 2.4, 5.5, 1.1, 3.0};
+    Double[] data = {3.1, 2.4, 5.5, 1.1, 3.0};
+    Double[] expected = {1.1, 2.4, 3.0, 3.1, 5.5};
     Heapsort.heapSort(data);
-    assertEquals("[1.1, 2.4, 3.0, 3.1, 5.5]", Arrays.toString(data));
+    assertEquals(Arrays.toString(expected), Arrays.toString(data));
   }
 
   // Tests Quicksort on an usorted array to ensure proper sorting.
   @Test
-  public void testQuicksortUnSortedArray() {
-    final Integer[] data = {100, 4, 9, 20, 42, 21, 53, 38};
+  public void testQuicksortUnsortedArray() {
+    Integer[] data = {100, 4, 9, 20, 42, 21, 53, 38};
+    Integer[] expected = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
     Quicksort.quickSort(data);
-    assertEquals("[4, 9, 20, 21, 38, 42, 53, 100]", Arrays.toString(data));
+    assertEquals(Arrays.toString(expected), Arrays.toString(data));
   }
 
   // Ensures MergeSort mutation "Changed increment from 1 to -1" doesn't survive
