@@ -62,7 +62,7 @@ public class SortingAlgorithmsTest {
 
   // Ensures BubbleSort correctly handles arrays with duplicate elements.
   @Test
-  public void testBubbleSortDupplicate() {
+  public void testBubbleSortDuplicate() {
     final Integer[] data = {4, 3, 3, 0, 11, 7, 5, 15, 12, 12, 99, 1};
     BubbleSort.bubbleSort(data);
     assertEquals("[0, 1, 3, 3, 4, 5, 7, 11, 12, 12, 15, 99]", Arrays.toString(data));
