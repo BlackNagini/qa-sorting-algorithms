@@ -141,7 +141,7 @@ public class SortingAlgorithmsTest {
   @Test
   public void testQuicksortUnsortedArray() {
     Integer[] data = {100, 4, 9, 20, 42, 21, 53, 38};
-    Integer[] expected = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
+    Integer[] expected = {4, 9, 20, 21, 38, 42, 53, 100};
     Quicksort.quickSort(data);
     assertEquals(Arrays.toString(expected), Arrays.toString(data));
   }
